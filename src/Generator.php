@@ -164,7 +164,7 @@ class Generator
     /**
      * @param Set $set
      */
-    protected function addSet(Category $set)
+    protected function addSet(Set $set)
     {
         $this->writer->startElement('set');
         $this->writer->writeAttribute('id', $set->getId());
