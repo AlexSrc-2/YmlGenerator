@@ -88,7 +88,7 @@ class Generator
             $this->addCategories($categories);
 
             if (\count($sets) !== 0) {
-                $this->addSets($deliveries);
+                $this->addSets($sets);
             }
 
             if (\count($deliveries) !== 0) {
