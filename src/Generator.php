@@ -11,6 +11,7 @@
 
 namespace Bukashk0zzz\YmlGenerator;
 
+use Bukashk0zzz\YmlGenerator\Model\Set;
 use Bukashk0zzz\YmlGenerator\Model\Category;
 use Bukashk0zzz\YmlGenerator\Model\Currency;
 use Bukashk0zzz\YmlGenerator\Model\Delivery;
@@ -157,6 +158,25 @@ class Generator
     }
 
     /**
+     * @param Set $set
+     */
+    protected function addSet(Category $set)
+    {
+        $this->writer->startElement('set');
+        $this->writer->writeAttribute('id', $set->getId());
+
+        if ($set->getName() !== null) {
+            $this->writer->writeElement('name', $set->getName());
+        }
+
+        if ($set->getUrl() !== null) {
+            $this->writer->writeElement('url', $set->getUrl());
+        }
+
+        $this->writer->fullEndElement();
+    }
+
+    /**
      * @param Category $category
      */
     protected function addCategory(Category $category)
@@ -239,6 +259,25 @@ class Generator
         foreach ($currencies as $currency) {
             if ($currency instanceof Currency) {
                 $this->addCurrency($currency);
+            }
+        }
+
+        $this->writer->fullEndElement();
+    }
+
+    /**
+     * Adds <sets> element.
+     *
+     * @param iterable $sets
+     */
+    private function addSets(iterable $sets)
+    {
+        $this->writer->startElement('sets');
+
+        /** @var Set $set */
+        foreach ($sets as $set) {
+            if ($set instanceof Set) {
+                $this->addSet($set);
             }
         }
 
