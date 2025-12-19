@@ -78,7 +78,7 @@ class Generator
      *
      * @return bool
      */
-    public function generate(ShopInfo $shopInfo, iterable $currencies, iterable $categories, iterable $offers, iterable $deliveries = [])
+    public function generate(ShopInfo $shopInfo, iterable $currencies, iterable $categories, iterable $offers, iterable $deliveries = [], iterable $sets = [])
     {
         try {
             $this->addHeader();
@@ -86,6 +86,10 @@ class Generator
             $this->addShopInfo($shopInfo);
             $this->addCurrencies($currencies);
             $this->addCategories($categories);
+
+            if (\count($sets) !== 0) {
+                $this->addSets($deliveries);
+            }
 
             if (\count($deliveries) !== 0) {
                 $this->addDeliveries($deliveries);
