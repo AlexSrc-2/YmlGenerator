@@ -988,7 +988,7 @@ abstract class AbstractOffer implements OfferInterface
                     $this->getCategoriesId()
                 ),
                 'set-ids' => implode(',', array_unique(\array_merge(
-                    [$this->getSetId()],
+                    !empty($this->getSetId()) ? [$this->getSetId()] : [],
                     $this->getSetsId()
                 ))),
                 'market_category' => $this->getMarketCategory(),
