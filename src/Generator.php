@@ -75,6 +75,7 @@ class Generator
      * @param iterable $categories
      * @param iterable $offers
      * @param iterable $deliveries
+     * @param iterable $sets
      *
      * @return bool
      */
