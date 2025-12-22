@@ -11,7 +11,6 @@
 
 namespace Bukashk0zzz\YmlGenerator;
 
-use Bukashk0zzz\YmlGenerator\Model\Set;
 use Bukashk0zzz\YmlGenerator\Model\Category;
 use Bukashk0zzz\YmlGenerator\Model\Currency;
 use Bukashk0zzz\YmlGenerator\Model\Delivery;
@@ -20,6 +19,7 @@ use Bukashk0zzz\YmlGenerator\Model\Offer\OfferGroupAwareInterface;
 use Bukashk0zzz\YmlGenerator\Model\Offer\OfferInterface;
 use Bukashk0zzz\YmlGenerator\Model\Offer\OfferOutlet;
 use Bukashk0zzz\YmlGenerator\Model\Offer\OfferParam;
+use Bukashk0zzz\YmlGenerator\Model\Set;
 use Bukashk0zzz\YmlGenerator\Model\ShopInfo;
 
 /**
